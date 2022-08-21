@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+}
+.themap{
+    width: 60%;
+    height: 100vh;
+}
+.pointers{
+    width: 40px;
+    height: 60vh; /**/
+    /*background-color: rgb(158, 123, 123); */
+    margin-top: 90px;
+    margin-left: 5px;
+    margin-right: -16px;
+    display: flex;
+    flex-direction: column;
+    opacity: 40%;
+}
+    .ptfrom{
+        width: 8px;
+        height: 8px;
+        background-color: black;
+        border-radius: 50%;
+        margin-top: 28px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .arrfrom{
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 0 1.5px 1.5px 0;
+        border-style: solid;
+        transform: rotate(45deg);
+    }
+    .ptline{
+        height: 26px;
+        width: 0;
+        border-style: dashed;
+        border-width: 1px;
+        margin-top: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ptto{
+        width: 8px;
+        height: 8px;
+        background-color: black;
+        border-radius: 50%;
+        margin-top: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+.rightspace{
+    width: 40%;
+    display: flex;
+}
+.legend{
+    border-radius: 10px;
+    background-color: azure;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 5%;
+}
+.search{
+    width: 99%;
+    height: 5%;
+    background-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: darkgrey;
+    margin-left: 0.25%;
+    display: flex;
+}
+.searchfield{
+    width: 90%;
+    height: 90%;
+    border: 0;
+    margin-left: 2.5%;
+    margin-top: 0.25%;
+    outline: none;
+}
+.srbutton{
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    opacity: 80%;
+}
+.srbutton img{
+    width: 100%;
+    height: 100%;
+}
+.srresults{
+    margin-top: 3px;
+    height: 10vh;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+    overflow-y: hidden;
+    white-space: nowrap;
+    justify-content: space-between;
+    display: none; /*UNHIDE ME!!!!*/
+}
+.srresults div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    padding: 0 8px 0 8px;
+    font-family: 'Courier New';
+    border-radius: 5px;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.774)
+}
+.srresults div:hover{
+    transition: 0.3s;
+    background-color: white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+.city{
+    margin-top: 10px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+.region{
+    font-size: smaller;
+    font-style: italic;
+}
+.country{
+    font-size: small;
+    font-style: italic;
+}
+.selectedcity{
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 5px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: darkgrey;*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+#selectedcityname{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#selcityweathernow{
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+}
+#selectedcityweatherdescription{
+    margin: auto 0 auto 12px;
+    font-style: italic;
+}
+.selectedcitylocaltime{
+    margin: auto 0 auto auto;
+    text-align: right;
+    color: dimgray;
+}
+.sslttitle{
+    font-style: italic;
+}
+#selectedcitytime{
+    margin: auto 20px auto auto;
+}
+.scrollselectors{
+    width: 100%;
+    display: flex;
+    display: none; /*UNHIDE ME!!!*/
+}
+.nearbyplaces{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden ;
+    margin-left: 1%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.nearplacesheader{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15pt;
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.nearplheaderleft{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.nearplheaderleft span{
+    margin-left: 4%;
+    display: none; /*UNHIDE ME!!*/
+}
+.nearplheaderleft small{
+    font-weight: normal;
+    font-size: 12pt;
+    margin-left: 4%;
+    opacity: 50%;
+    font-style: italic;
+    display: none; /*UNHIDE ME!*/
+}
+.nearplacesheader #nearcitychosenheader{
+    display: block; /*WARNING!!*/
+}
+.nearplacesheader #nearcitychosendesc{
+    display: block; /*WARNING!!*/
+}
+.nearplacesheaderright{
+    width: 50%;
+    margin-right: 4%;
+    display: none; /*UNHUDE ME!!!*/
+}
+.nearplacesheaderright span{
+    float: right;
+}
+.nearcityselector{
+    width: 50%;
+    background-color: white;
+    overflow-y: scroll;
+}
+#nearcity{
+    margin-top: 2px;
+    margin-bottom: 5px;
+    display: flex;
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+#nearcity:hover{
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    background-color: rgba(87, 166, 177, 0.1);
+    cursor:pointer;
+}
+    #nearcity span{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #nearcityname{
+        font-size: 15pt;
+        font-weight: bold;
+        margin-left: 3%;
+        max-width: 60%;
+    }
+    #nearcitydistance{
+        font-family: 'Arial';
+        font-style: italic;
+        font-size: 11.5pt;
+        opacity: 70%;
+        margin-left: 2%;
+    }
+    .nearcityimgdiv{
+        width: 64px;
+        height: 64px;
+        margin-left: auto;
+        margin-right: 2%;
+        margin-top: auto;
+        margin-bottom: auto;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    #nearcitybanner{
+        width: 100%;
+        object-fit: cover;
+    }
+#nearbyplace{
+    margin-left: 2%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px 10px 10px;
+    width: 100%;
+}
+#nearbyplace:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+#nearbyplacetitle{
+    font-size: 15pt;
+}
+#nearbyplace span{
+    font-size: 12pt;
+}
+#nearplaceimgdiv{
+    margin-top: 12px;
+    width: 250px;
+    height: 125px;
+    background-image: url("https://www.nycgo.com/images/venues/1097/wall-street-photo-tagger-yancey-iv-nyc-and-company-02-2__large.jpg");
+    background-position: center;
+    background-size:cover;
+    border-radius: 12px;
+}
+/* #nearplaceimg{
+    width: 100%;
+} */
+.nearplaceimgexpand{
+    width: 32px;
+    float: right;
+    margin-top: 88px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    filter: opacity(50%);
+    cursor: zoom-in;
+}
+.route{
+    height: 63vh;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+#nearcitychdestinationweather{
+    width: 64px;
+}

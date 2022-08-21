@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <iframe
+      class="themap"
+      frameborder="0"
+      scrolling="no"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-74.01440978050233%2C40.70545714054015%2C-73.99338126182558%2C40.71273598591428&amp;layer=mapnik"
+      style="border: 1px solid black"
+    ></iframe>
+    <div class="rightspace">
+      <div class="pointers">
+        <!--Here are the pointers that are just for beauty and understanding They will have a difficult js code-->
+        <div class="ptfrom"></div>
+        <div class="arrfrom"></div>
+        <div class="ptline"></div>
+        <div class="ptto"></div>
+      </div>
+      <div class="legend">
+        <div class="search">
+          <input
+            class="searchfield"
+            type="text"
+            id="citysearch"
+            placeholder="Введите название города"
+          />
+          <a class="srbutton" href=""
+            ><img src="./icons/searchbutton.png" alt=""
+          /></a>
+        </div>
+        <div class="srresults">
+          <div id="resultdiv">
+            <span id="city">Lorem.</span><span id="region">Lorem, ipsum.</span
+            ><span id="country">Lorem.</span>
+          </div>
+          <!--<div><span id="city">Nihil.</span><span id="region">Odit, perspiciatis.</span><span id="country">Et!</span></div>
+                <div><span id="city">Optio.</span><span id="region">Voluptates, iste.</span><span id="country">Assumenda!</span></div>
+                <div><span id="city">Facere.</span><span id="region">Quo, quisquam.</span><span id="country">Alias.</span></div>
+                <div><span id="city">Quas?</span><span id="region">Praesentium, perferendis!</span><span id="country">Nobis?</span></div>
+                <div><span id="city">Sequi.</span><span id="region">Officia, laudantium.</span><span id="country">Laborum?</span></div>
+                <div><span id="city">Labore.</span><span id="region">Iure, corrupti!</span><span id="country">Labore.</span></div>
+                <div><span id="city">Consectetur.</span><span id="region">Iste, dolor?</span><span id="country">Eaque?</span></div>
+                <div><span id="city">Dolorem?</span><span id="region">Praesentium, repellendus?</span><span id="country">Laudantium!</span></div>
+                <div><span id="city">Ducimus.</span><span id="region">Voluptatum, consequuntur?</span><span id="country">Nemo.</span></div>-->
+        </div>
+        <div class="selectedcity">
+          <h1 id="selectedcityname">Moscow</h1>
+          <img src="./icons/weather.svg" alt="" id="selcityweathernow" />
+          <span id="selectedcityweatherdescription">Sunny, clear</span>
+          <div class="selectedcitylocaltime">
+            <span class="sslttitle">Local time:</span>
+            <span id="selectedcitytime">16:10</span>
+          </div>
+        </div>
+        <div class="nearplacesheader">
+          <div class="nearplheaderleft">
+            <span id="legendheader">Places you can visit</span><!--This shows if no route chosen -->
+            <small id="legendheaderdesc">Places in the chosen location:</small><!--This shows if no route chosen -->
+            <span id="nearcitychosenheader">Vladimir</span>
+            <small id="nearcitychosendesc">12km</span>
+          </div>
+          <img src="/icons/weather.svg" alt="" id="nearcitychdestinationweather"><!--!!!!!Вот это не работает, разберусь завтра-->
+          <div class="nearplacesheaderright">
+            <span>Choose the suggested location</span>
+          </div>
+        </div>
+        <div class="scrollselectors">
+          <div class="nearbyplaces">
+            <!--And there are the results for selected near location-->
+            <div id="nearbyplace">
+              <h1 id="nearbyplacetitle">Lorem ipsum dolor sit.</h1>
+              <span id="nearbyplacedistance">15km</span>
+              <span id="nearbyplacecity">Vladimir</span>
+              <span id="nearbyplaceregion">Moscow Oblast'</span>
+              <div id="nearplaceimgdiv">
+                <img
+                  src="./icons/expand.svg"
+                  alt=""
+                  class="nearplaceimgexpand"
+                />
+                <!-- <img src="https://www.nycgo.com/images/venues/1097/wall-street-photo-tagger-yancey-iv-nyc-and-company-02-2__large.jpg" alt="" id="nearplaceimg"> -->
+              </div>
+            </div>
+            <div id="nearbyplace">
+              <h1 id="nearbyplacetitle">Lorem ipsum dolor sit.</h1>
+              <span id="nearbyplacedistance">15km</span>
+              <span id="nearbyplacecity">Vladimir</span>
+              <span id="nearbyplaceregion">Moscow Oblast'</span>
+              <div id="nearplaceimgdiv">
+                <img
+                  src="./icons/expand.svg"
+                  alt=""
+                  class="nearplaceimgexpand"
+                />
+                <!-- <img src="https://www.nycgo.com/images/venues/1097/wall-street-photo-tagger-yancey-iv-nyc-and-company-02-2__large.jpg" alt="" id="nearplaceimg"> -->
+              </div>
+            </div>
+            <div id="nearbyplace">
+              <h1 id="nearbyplacetitle">Lorem ipsum dolor sit.</h1>
+              <span id="nearbyplacedistance">15km</span>
+              <span id="nearbyplacecity">Vladimir</span>
+              <span id="nearbyplaceregion">Moscow Oblast'</span>
+              <div id="nearplaceimgdiv">
+                <img
+                  src="./icons/expand.svg"
+                  alt=""
+                  class="nearplaceimgexpand"
+                />
+                <!-- <img src="https://www.nycgo.com/images/venues/1097/wall-street-photo-tagger-yancey-iv-nyc-and-company-02-2__large.jpg" alt="" id="nearplaceimg"> -->
+              </div>
+            </div>
+          </div>
+          <div class="nearcityselector">
+            <div id="nearcity">
+                <span id="nearcityname">Lorem, ipsum.</span>
+                <span id="nearcitydistance">
+                    10km
+                </span>
+                <div class="nearcityimgdiv"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Coat_of_Arms_of_Vladimir_%28Vladimir_oblast%29.png/150px-Coat_of_Arms_of_Vladimir_%28Vladimir_oblast%29.png" alt="" id="nearcitybanner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="route">
+            
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
